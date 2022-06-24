@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Configure Project",
+			"command": "cmake",
+			"args": ["-B", "build", "-S", "."],
+			"group": {
+				"kind": "build",
+			},
+			"problemMatcher": [],
+			"detail": "Configure CMake"
+		},
+		{
+			"type": "shell",
+			"label": "Build Project",
+			"dependsOn": "Configure Project",
+			"command": "make",
+			"args": ["--directory=build"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"detail": "Runs Make in the build directory"
+		}
+	]
+}
